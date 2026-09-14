@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Day 4 - Rock Paper Scissors</title>
+  
+  <!-- PyScript CSS & JS -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #121212;
+      color: #00ff66;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .terminal-container {
+      width: 100%;
+      max-width: 650px;
+      background-color: #000000;
+      border: 2px solid #00ff66;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.25);
+    }
+
+    .terminal-header {
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Target PyScript's output container styling */
+    script[type="py"] {
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="terminal-container">
+    <div class="terminal-header">Python Terminal — Rock Paper Scissors</div>
+    
+    <!-- Python Script Execution -->
+    <script type="py" terminal>
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+game_images = [rock, paper, scissors]
+
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
+
+if user_choice < 0 or user_choice >= 3:
+    print("Invalid number! You typed an invalid choice, you lose!")
+else:
+    print("\nYou chose:")
+    print(game_images[user_choice])
+
+    computer_choice = random.randint(0, 2)
+    print("Computer chose:")
+    print(game_images[computer_choice])
+
+    if user_choice == computer_choice:
+        print("It's a draw! 🤝")
+    elif (user_choice - computer_choice) % 3 == 1:
+        print("You win! 🎉")
+    else:
+        print("You lose! ❌")
+    </script>
+  </div>
+
+</body>
+</html>
