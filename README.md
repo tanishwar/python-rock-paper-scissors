@@ -1,2 +1,12 @@
 # python-rock-paper-scissors
-A beginner-friendly Rock Paper Scissors game built with Python using random computer choices and user input.
+
+## 🎮 How to Play
+
+1. **0** = 🪨 **Rock**
+2. **1** = 📄 **Paper**
+3. **2** = ✂️ **Scissors**
+
+### Rules:
+- **Rock** beats Scissors
+- **Paper** beats Rock
+- **Scissors** beats Paper
